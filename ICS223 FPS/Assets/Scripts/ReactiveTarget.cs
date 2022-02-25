@@ -12,6 +12,12 @@ public class ReactiveTarget : MonoBehaviour
 
     public void ReactToHit()
     {
+        WanderingAI enemyAI = GetComponent<WanderingAI>();
+        
+        if (enemyAI != null)
+        {
+            enemyAI.ChangeState(EnemyStates.dead);
+        }
         StartCoroutine(Die());
     }
 
